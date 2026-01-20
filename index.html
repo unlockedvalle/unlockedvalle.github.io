@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zephiryx Gaming - Inico</title>
+    <title>Zephiryx Gaming - Inicio</title>
     <link rel="icon" type="image/png" href="https://files.catbox.moe/2u6mbz.png">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -192,8 +192,13 @@
         }
         .hero-text { flex:1; max-width:45vw; }
         .hero-text h1 {
-            font-family:'Bebas Neue',sans-serif; font-size:8.5vw; margin:0; text-align:left;
+            font-family:'Bebas Neue',sans-serif;
+            font-size: clamp(3.5rem, 6.5vw, 6.8rem);
+            white-space: nowrap;
+            margin:0;
+            text-align:left;
         }
+
         @keyframes waveColor {
             0% { background-position:200% 0; }
             100% { background-position:-200% 0; }
@@ -209,20 +214,31 @@
         .start-btn {
             display:inline-block; padding:1.3vw 3.5vw; background:var(--primary); color:black;
             font-weight:900; font-size:1.7vw; border-radius:1vw; text-decoration:none;
-            position:relative; overflow:hidden;
+            position:relative; overflow:visible;
         }
         .start-btn:hover { background:var(--primary-dark); }
-        .start-btn .icon {
-            position:absolute; width:2.8vw; opacity:0; pointer-events:none;
-            left:50%; top:50%; transform:translate(-50%,-50%) scale(0.5);
+        .start-btn .emoji {
+            position:absolute;
+            font-size:1.6vw;
+            opacity:0;
+            pointer-events:none;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%) scale(0.5);
             transition:all .5s ease;
         }
-        .start-btn:hover .icon { opacity:1; }
-        .start-btn:hover .icon-joystick { transform:translate(-50%,-220%) scale(1.2) rotate(-15deg); }
-        .start-btn:hover .icon-controller { transform:translate(-150%,120%) scale(1.2) rotate(10deg); }
-        .start-btn:hover .icon-laptop { transform:translate(-300%,-150%) scale(1.2) rotate(-10deg); }
-        .start-btn:hover .icon-coin { transform:translate(180%,-180%) scale(1.2) rotate(15deg); }
-        /* Sliders laterales con juegos reales */
+
+        .start-btn:hover .emoji {
+            opacity:1;
+        }
+
+        /* Movimientos */
+        .start-btn:hover .e1 { transform:translate(-50%,-220%) scale(1.2); }
+        .start-btn:hover .e2 { transform:translate(-150%,120%) scale(1.2); }
+        .start-btn:hover .e3 { transform:translate(-300%,-150%) scale(1.2); }
+        .start-btn:hover .e4 { transform:translate(180%,-180%) scale(1.2); }
+
+        /* Sliders laterales con juegos reales */   
         .hero-gallery {
             display:flex; gap:3vw; height:30vw;
         }
@@ -235,9 +251,9 @@
             width:100%; height:15vw; object-fit:cover; border-radius:1.8vw;
             transition:transform .3s; outline:0.2vw solid transparent;
         }
-        .slider-track a:hover img { transform:scale(1.08); outline:0.2vw solid var(--primary); }
-        @keyframes scroll-up { 0%{transform:translateY(0)} 100%{transform:translateY(-50%)} }
-        @keyframes scroll-down { 0%{transform:translateY(-50%)} 100%{transform:translateY(0)} }
+        .slider-track a:hover img { transform:scale(1.05); outline:0.2vw solid var(--primary); }
+        @keyframes scroll-up { from{transform:translateY(0)} to{transform:translateY(-50%)} }
+        @keyframes scroll-down { from{transform:translateY(-50%)} to{transform:translateY(0)} }
         /* Títulos de sección con texto + icono */
         .section-title {
             text-align:center; margin:10vw 0 4vw; font-size:5.5vw; font-family:'Bebas Neue',sans-serif;
@@ -457,14 +473,19 @@
     <div id="particles-js"></div>
     <div class="hero-section">
         <div class="hero-text">
-            <h1>Zephir<span class="highlight">yx</span></h1>
-            <h2>+500 juegos sin bloqueos · Juega disfrazado en clase 😈</h2>
+          <h1>
+    Zephir<span class="highlight">yx</span>
+    <span class="gaming">
+        Gam<span class="highlight">ing</span>
+    </span>
+</h1>
+            <h2>Sumérgete en más de 500 juegos destacados en múltiples categorías</h2>
             <a href="#popular" class="start-btn">
                 JUGAR AHORA
-                <img src="https://pizzaedition.win/joystick.png" class="icon icon-joystick">
-                <img src="https://pizzaedition.win/controller.png" class="icon icon-controller">
-                <img src="https://pizzaedition.win/laptop.png" class="icon icon-laptop">
-                <img src="https://pizzaedition.win/coin.png" class="icon icon-coin">
+                <span class="emoji e1">🕹️</span>
+                <span class="emoji e2">🎮</span>
+                <span class="emoji e3">💻</span>
+                <span class="emoji e4">⭐</span>
             </a>
         </div>
         <div class="hero-gallery">
@@ -483,6 +504,14 @@
                         <a href="https://unlockedvalle.github.io/play/moto-x3m"><img src="https://23-azo.github.io/imgs/moto-x3m.png"></a>
                         <a href="https://unlockedvalle.github.io/play/1v1-lol"><img src="https://23-azo.github.io/imgs/1v1-lol.png"></a>
                         <a href="https://unlockedvalle.github.io/play/retro-bowl"><img src="https://23-azo.github.io/imgs/retro-bowl.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/drive-mad"><img src="https://23-azo.github.io/imgs/drive-mad.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/geometry-dash"><img src="https://23-azo.github.io/imgs/geometry-dash.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/cookie-clicker"><img src="https://23-azo.github.io/imgs/cookie-clicker.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/bitlife"><img src="https://23-azo.github.io/imgs/bitlife.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/cluster-rush"><img src="https://23-azo.github.io/imgs/cluster-rush.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/snow-rider-3d"><img src="https://23-azo.github.io/imgs/snow-rider-3d.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/subway-surfers"><img src="https://23-azo.github.io/imgs/subway-surfers.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/moto-x3m"><img src="https://23-azo.github.io/imgs/moto-x3m.png"></a>                 
                     </div>
                 </div>
             </div>
@@ -498,7 +527,17 @@
                         <a href="https://unlockedvalle.github.io/play/slope"><img src="https://23-azo.github.io/imgs/slope.png"></a>
                         <a href="https://unlockedvalle.github.io/play/among-us"><img src="https://23-azo.github.io/imgs/among-us.png"></a>
                         <a href="https://unlockedvalle.github.io/play/smash-karts"><img src="https://23-azo.github.io/imgs/smash-karts.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/basket-random"><img src="https://23-azo.github.io/imgs/basket-random.png"></a>                   
+                        <a href="https://unlockedvalle.github.io/play/smash-karts"><img src="https://23-azo.github.io/imgs/smash-karts.png"></a>
                         <a href="https://unlockedvalle.github.io/play/basket-random"><img src="https://23-azo.github.io/imgs/basket-random.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/monkey-mart"><img src="https://23-azo.github.io/imgs/monkey-mart.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/rooftop-snipers"><img src="https://23-azo.github.io/imgs/rooftop-snipers.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/temple-run-2"><img src="https://23-azo.github.io/imgs/temple-run-2.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/ovo"><img src="https://23-azo.github.io/imgs/ovo.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/slope"><img src="https://23-azo.github.io/imgs/slope.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/among-us"><img src="https://23-azo.github.io/imgs/among-us.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/smash-karts"><img src="https://23-azo.github.io/imgs/smash-karts.png"></a>
+                        <a href="https://unlockedvalle.github.io/play/basket-random"><img src="https://23-azo.github.io/imgs/basket-random.png"></a>                                      
                     </div>
                 </div>
             </div>
@@ -537,7 +576,7 @@
                     <img src="https://files.catbox.moe/2u6mbz.png" alt="Zephiryx Gaming">
                     <span>Zephiryx Gaming</span>
                 </a>
-                <p class="footer-desc">Juega sin que te pillen 😈<br>+500 juegos desbloqueados para clase y trabajo.</p>
+                <p class="footer-desc">+500 juegos desbloqueados para jugar cuando y donde quieras.</p>
                 
                 <div class="footer-social">
                     <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
